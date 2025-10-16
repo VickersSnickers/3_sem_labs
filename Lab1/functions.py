@@ -51,7 +51,7 @@ def generate_passport():
             '75', '76', '77', '78', '79', '80', '81', '82', '83', '84', '85', '86', 
             '87', '88', '89', '90', '91', '92', '93', '94', '95', '96', '97', '98', 
             '99', '00', '01', '02', '03', '04', '05', '06', '07']
-    return f"=\"{series_1[randrange(len(series_1))] + series_2[randrange(len(series_2))] + ''.join([str(randrange(10)) for i in range(6)])}\""
+    return series_1[randrange(len(series_1))] + series_2[randrange(len(series_2))] + ''.join([str(randrange(10)) for i in range(6)])
 
 
 def generate_datetime(time_begin="08:00", time_end="21:00"):
@@ -106,4 +106,4 @@ def generate_card_number(banks):
     system_name, bin_list = choice(banks[chosen_bank][1])
     bin_code = choice(bin_list)
     partial_num = bin_code + ''.join(str(randrange(9)) for i in range(9))
-    return '="' + partial_num + calculate_luhn_checksum(partial_num) + '"'
+    return partial_num + calculate_luhn_checksum(partial_num)

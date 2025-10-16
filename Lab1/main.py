@@ -31,7 +31,7 @@ def make_medcard(bank_card_data, male_list, female_list):
         for _ in al:
             analysis.append(_)
 
-        temp = elem[2].split(',')
+        temp = elem[2].split(', ')
 
         al_cost = 0
         for i in analysis:
